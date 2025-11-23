@@ -1,2 +1,54 @@
-# calculator
-This Python program is a multi-functional calculator that performs various arithmetic operations.
+import math
+import os
+
+while True:
+    print("""
+    ====== SIMPLE CALCULATOR ======
+    1. Addition
+    2. Subtraction
+    3. Multiplication
+    4. Division
+    5. Modulus (Remainder)
+    6. Exponentiation (Power)
+    7. Floor Division
+    8. Square Root
+    9. Exit
+    """)
+    
+    choice = input("Enter your choice: ")
+
+    if choice in ["1","2","3","4","5","6","7"]:
+        num1 = float(input("Enter number 1: "))
+        num2 = float(input("Enter number 2: "))
+
+    if choice == "1":
+        print(f"Result: {num1 + num2}")
+    elif choice == "2":
+        print(f"Result: {num1 - num2}")
+    elif choice == "3":
+        print(f"Result: {num1 * num2}")
+    elif choice == "4":
+        if num2 != 0:
+            print(f"Result: {num1 / num2}")
+        else:
+            print("Error: Division by zero!")
+    elif choice == "5":
+        print(f"Result: {num1 % num2}")
+    elif choice == "6":
+        print(f"Result: {num1 ** num2}")
+    elif choice == "7":
+        print(f"Result: {num1 // num2}")
+    elif choice == "8":
+        num = float(input("Enter a number: "))
+        if num >= 0:
+            print(f"Square Root: {math.sqrt(num)}")
+        else:
+            print("Error: Cannot calculate square root of negative number!")
+    elif choice == "9":
+        print("Exiting Calculator. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please try again!")
+
+    input("\nPress Enter to continue...")
+    os.system('cls' if os.name == 'nt' else 'clear')  # Clear screen for next operation
